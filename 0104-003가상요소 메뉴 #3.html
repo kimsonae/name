@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상요소 메뉴만들기 #3</title>
+    <style>
+        body {
+            margin: 20px;
+            padding: 20px;
+            background: rgb(84, 133, 201);
+        }
+
+        nav a {
+            text-decoration: none; 
+            color: white;
+            display: inline-block;
+            position: relative;
+            margin: 15px 10px;
+            padding: 0 10px; 
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid white;
+            border-top: 0;
+            border-right: 0;
+        }
+
+        .effect3 a:before {
+            content: attr(data-hover);
+            position: absolute;
+            bottom: 100%;
+        }
+
+        .effect3 a:hover {
+            transform: translateY(100%);
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="effect3">
+        <a href="#">HTML</a>        
+        <a href="#">CSS</a>        
+        <a href="#">JavaScript</a>        
+        <a href="#">jQuery</a>        
+        <a href="#">References</a>
+    </nav>
+</body>
+</html>

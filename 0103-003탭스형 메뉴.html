@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>탭스형 메뉴</title>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- http://designscrazed.org/html5-css3-accordion-tabs/ -->
+<style>
+    body {
+        margin: 20px;
+        padding: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #ccc;
+        background: #f1f1f1;
+    }
+    ul {
+        list-style: none;
+        box-sizing: border-box;
+        /* box를 활용할 경우에는 box-sizing으로 먼저 조정한다. */
+        margin: 0;
+        padding: 0;
+        /* padding: 0 을 이용하여 공간을 없애준다. */
+    }
+    
+    nav {
+        margin-top: 30px;
+    }
+        /* 항상 ul li는 nav안에 넣어야 한다. */
+
+    nav ul {
+        position: relative;
+        /* relative: 이전 부모요소에 자연스럽게 연결해 위치를 지정한다.*/
+        float: none;
+        /* 위치변경이 없도록 조정한다. */
+        margin: 0;
+        width: 500px;
+        text-align: left;
+    }
+
+    nav ul li {
+        float: left;
+    }
+
+    nav ul input[type="radio"] {
+        position: absolute;
+        /* absolute는 원하는 위치를 지정해서 배치한다. 
+            fixed는 지정한 위치에 고정해서 배치한다.*/
+        left: -9999px;
+        /* 옆에 가 있지만 존재는 하고 있다. */
+    }
+
+    nav ul label {
+        display: block;
+        position: relative;
+        top: 10px;
+        padding: 10px 25px;
+        /* 글씨 box를 padding으로 조정하여 키운다. */
+        font-size: 0.875em;
+        background: #333;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    nav ul label:hover {
+        background: #8ac007;
+    }
+
+    nav ul .content {
+        display: none;
+        /* 달라붙을 수밖에 없게 만든다. */
+        position: absolute;
+        left: 0;
+        top: 45px;
+        padding: 15px 25px 60px;
+        width: 100%;
+        overflow: hidden;
+        /* overflow: hidden; 콘텐츠를 안쪽 여백 상자에 맞추기 위해 잘라낸다. */
+        line-height: 170%;
+        background: #8ac007;
+        border-radius: 0 15px 0 0;
+        /*  border-radius로 box의 한부분만 조절하는 것이 가능하다. */
+    }
+     /* content 요소를 설정해준다. */
+
+    nav ul [id^="tab"]:checked ~ [id^="tab-content"] {
+        display: block;
+        /* [id^="tab"]:checked ~를 포함한 단어로 시작하는걸 체크했을 때, 
+        [id^="tab-content"] 포함한 부분을 나오게 한다. */
+    }
+
+    h3 {
+        margin: 10px 0 30px 0;
+        font-size: 1.25em;
+        font-style: italic;
+        color: #000;
+    }
+
+    nav ul [id^="tab"]:checked + label {
+        top: 6px;
+        padding: 14px;
+        background: #8ac007;
+    }
+     /* 너비는 자동으로 변환한다. */
+
+</style>
+</head>
+
+<body>
+<div class="container">
+	<h1 class="title">Pure CSS Horizontal Tabs2</h1>
+	<nav>
+		<ul>
+			<li>
+				<input type="radio" name="tabs" id="tab1" checked>
+				<label for="tab1">HTML</label>
+                <!-- 원래는 label fot="id"가 먼저 가야하는데 레이블을 따로 빼서 사용해야 하기 때문에 이곳에 자리한다. CSS 에서는 위에 있는 것을 잡을 수 없다.-->
+				<div id="tab-content1" class="content">
+					<h3>HTML(5) Tutorial :</h3>
+					<p>
+						With HTML you can create your own Web site.<br>
+						This tutorial teaches you everything about HTML.<br>
+						HTML is easy to learn - You will enjoy it.
+					</p>
+				</div>
+			</li>
+			<li>
+				<input type="radio" name="tabs" id="tab2">
+				<label for="tab2">CSS</label>
+				<div id="tab-content2" class="content">
+					<h3>CSS Tutorial :</h3>
+					<p>
+						Save a lot of work with CSS!<br>
+						In our CSS tutorial you will learn how to use CSS to control the style and layout of multiple Web pages all at once.
+					</p>
+				</div>
+			</li>
+			<li>
+				<input type="radio" name="tabs" id="tab3">
+				<label for="tab3">JavaScript</label>
+				<div id="tab-content3" class="content">
+					<h3>JavaScript Tutorial :</h3>
+					<p>
+						JavaScript is the programming language of HTML and the Web.<br>
+						Programming makes computers do what you want them to do.<br>
+						JavaScript is easy to learn.<br>
+						This tutorial will teach you JavaScript from basic to advanced.
+					</p>
+				</div>
+			</li>
+			<li>
+				<input type="radio" name="tabs" id="tab4">
+				<label for="tab4">jQuery</label>
+				<div id="tab-content4" class="content">
+					<h3>jQuery Tutorial :</h3>
+					<p>
+						jQuery is a JavaScript Library.<br>
+						jQuery greatly simplifies JavaScript programming.<br>
+						jQuery is easy to learn.
+					</p>
+				</div>
+			</li>
+		</ul>
+	</nav>
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 box-shadow</title>
+    <style>
+
+        body {
+            width: 700px;
+            margin: 50px;
+        }
+      
+        .box1 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #555;
+            box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+            background: white;
+            transform: rotate(15deg);
+            margin: 0;
+        }
+
+        .in1 {
+            width: 280px;
+            height: 210px;
+            border: 1px solid #555;
+            margin: 8px;
+        }
+        .box2 { 
+            width: 300px;
+            height: 300px;
+            border: 1px solid #555;
+            display: block;
+            box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+            background: white;
+            float: right;
+            margin-top: -300px;
+            margin-right: 100px;
+            transform: rotate(-15deg);
+        }
+
+        p {
+            font-size: 15px;
+            margin-left: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="box1">
+   <div class="in1"></div>
+    <p> The pulpit rock in Lysefjorden, Norway.</p>
+</div>
+
+<div class="box2">
+    <div class="in1"></div>
+    <p> Monterosso al Mare. One of the five rillages in Cinque Terre.</p>
+</div>
+</body>
+</html>

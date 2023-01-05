@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            width: 100%;
+        }
+
+        .manu ul li  {
+            width: 150px;
+            height: 45px;
+            float: left;
+            text-align: center;
+            /* border: 1px solid black; */
+            list-style: none;
+            background: linear-gradient(#333, #555);
+            padding-top: 15px;
+        }
+
+        .manu ul li:hover {
+            background: rgb(98, 207, 107);
+        }
+
+        .manu ul li a {
+            text-decoration: none;
+            color: #fff;
+            text-shadow: #555 0 1px 2px;
+        }
+
+        li:first-child {
+            border-radius: 10px 0 0 10px;
+            
+        }
+
+        li:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+
+        .cls001 {
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="manu">
+        <ul class="cls001">
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Business</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Download</a></li>
+            <li><a href="#">Company</a></li>
+
+        </ul>
+  
+    </div>
+</body>
+</html>
